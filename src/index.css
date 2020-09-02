@@ -15,7 +15,7 @@ body {
   padding: 10px;
   min-width: 800px;
   width: 65%;
-  height: 100vh;
+  height: calc(100vh - 20px);
 }
 
 .Header, .MessageList, .MessageInput {
@@ -37,4 +37,33 @@ body {
 #last-sent {
   position: absolute;
   right: 0px;
+}
+
+.MessageList {
+  height: calc(100vh - 21px - 142px);
+  width: auto;
+  border: 2px solid #a98;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.Message {
+  padding: 10px;
+}
+
+.Message:nth-child(2n) {
+  background-color: #ddd;
+}
+
+.message-owner {
+  font-weight: bold;
+  color: #555;
+}
+
+.message-text {
+  color: #555;
+}
+
+.message-time {
+  font-size: 0.5em;
 }
