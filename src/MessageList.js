@@ -5,15 +5,18 @@ class MessageList extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-         messages: this.props.messages
+         messages: this.props.messages,
+         userId: this.props.userId
       }
    }
 
    render() {
+      let previousDate = "";
       return (
          <div className="MessageList">
-            {this.state.messages.map(element =>
-               <Message message={element}/>
+            {this.state.messages.map(element => {
+                  return (<Message message={element} userId={this.state.userId} previousDate={previousDate}/>);
+               }
             )}
          </div>
       );

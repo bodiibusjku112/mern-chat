@@ -1,3 +1,7 @@
+*:focus {
+	outline: none;
+}
+
 body {
   background-color: #fff;
   margin: 0;
@@ -40,7 +44,7 @@ body {
 }
 
 .MessageList {
-  height: calc(100vh - 21px - 142px);
+  height: calc(100vh - 21px - 179px);
   width: auto;
   border: 2px solid #a98;
   border-radius: 5px;
@@ -66,4 +70,34 @@ body {
 
 .message-time {
   font-size: 0.5em;
+}
+
+.MessageInput {
+  padding: 0px 10px 10px 10px;
+  height: 54px;
+}
+
+#input-field {
+  display: inline-block;
+  padding: 5px 10px;
+  height: 40px;
+  width: 470px;
+  border: 2px solid #a98;
+  border-radius: 5px;
+}
+
+#send-button {
+  padding: 5px 10px;
+  float: right;
+  background-color: #fff;
+  margin: 0px;
+  width: 80px;
+  height: 54px;
+  border: 2px solid #a98;
+  border-radius: 5px;
+}
+
+#send-button:active {
+  border-color: #ca9;
+  color: #666;
 }
