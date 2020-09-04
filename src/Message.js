@@ -15,9 +15,10 @@ class Message extends React.Component {
             <div className="Message Own">
                <div className="message-owner">{this.state.message.user}</div>
                <div className="message-text">{this.state.message.text}</div>
+               <div className="likes-counter">{this.state.message.likes.length} likes</div>
                <div className="message-time">{this.state.message.createdAt}</div>
-               <button className="edit-button">Edit</button>
-               <button className="delete-button">Delete</button>
+               <button className="edit-button" onClick={() => this.props.editMessage(this.state.message.id)}>Edit</button>
+               <button className="delete-button" onClick={() => this.props.deleteMessage(this.state.message.id)}>Delete</button>
             </div>
          );
       }
@@ -25,8 +26,9 @@ class Message extends React.Component {
          <div className="Message">
             <div className="message-owner">{this.state.message.user}</div>
             <div className="message-text">{this.state.message.text}</div>
+            <div className="likes-counter">{this.state.message.likes.length} likes</div>
             <div className="message-time">{this.state.message.createdAt}</div>
-            <button className="like-button">Like</button>
+            <button className="like-button" onClick={() => this.props.likeMessage(this.state.message.id, this.state.userId)}>Like</button>
          </div>
       );
    }

@@ -15,7 +15,7 @@ class MessageList extends React.Component {
       return (
          <div className="MessageList">
             {this.state.messages.map(element => {
-                  return (<Message message={element} userId={this.state.userId} previousDate={previousDate}/>);
+                  return (<Message message={element} userId={this.state.userId} deleteMessage={this.props.deleteMessage} likeMessage={this.props.likeMessage} editMessage={this.props.editMessage}/>);
                }
             )}
          </div>
