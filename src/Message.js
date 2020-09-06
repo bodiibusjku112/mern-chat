@@ -13,22 +13,30 @@ class Message extends React.Component {
       if (this.state.message.userId === this.state.userId) {
          return (
             <div className="Message Own">
+               <img className="message-avatar" src={this.state.message.avatar} alt=""/>
                <div className="message-owner">{this.state.message.user}</div>
                <div className="message-text">{this.state.message.text}</div>
-               <div className="likes-counter">{this.state.message.likes.length} likes</div>
-               <div className="message-time">{this.state.message.createdAt}</div>
-               <button className="edit-button" onClick={() => this.props.editMessage(this.state.message.id)}>Edit</button>
-               <button className="delete-button" onClick={() => this.props.deleteMessage(this.state.message.id)}>Delete</button>
+               <div className="message-time">{this.state.message.createdAt.slice(0, 10) + " " + this.state.message.createdAt.slice(11, 19)}</div>
+               <div className="likes-counter">
+                  {this.state.message.likes.length} likes 
+                  <button className="edit-button" onClick={() => this.props.editMessage(this.state.message.id)}>Edit</button>
+                  <button className="delete-button" onClick={() => this.props.deleteMessage(this.state.message.id)}>Delete</button>
+               </div>
+               
             </div>
          );
       }
       return (
          <div className="Message">
+            <img className="message-avatar" src={this.state.message.avatar} alt=""/>
             <div className="message-owner">{this.state.message.user}</div>
             <div className="message-text">{this.state.message.text}</div>
-            <div className="likes-counter">{this.state.message.likes.length} likes</div>
-            <div className="message-time">{this.state.message.createdAt}</div>
-            <button className="like-button" onClick={() => this.props.likeMessage(this.state.message.id, this.state.userId)}>Like</button>
+            <div className="message-time">{this.state.message.createdAt.slice(0, 10) + " " + this.state.message.createdAt.slice(11, 19)}</div>
+            <div className="likes-counter">
+               {this.state.message.likes.length} likes 
+               <button className="like-button" onClick={() => this.props.likeMessage(this.state.message.id, this.state.userId)}>Like</button>
+            </div>
+            
          </div>
       );
    }

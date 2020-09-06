@@ -5,7 +5,6 @@ class Header extends React.Component {
       super(props);
       this.state = {
          messages: this.props.messages,
-         messagesLength: this.props.messagesLength,
          users: []
       }
    }
@@ -26,7 +25,7 @@ class Header extends React.Component {
          <div className="Header">
             <span id="header-name">My Chat</span>
             <span id="participants">{this.state.users.length} participants</span>
-            <span id="messages">{this.state.messagesLength} messages</span>
+            <span id="messages">{this.state.messages.length} messages</span>
             <span id="last-sent">last message at {last}</span>
          </div>
       );
